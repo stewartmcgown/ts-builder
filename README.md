@@ -1,5 +1,5 @@
 # ![Typescript Logo Small](https://cdn.icon-icons.com/icons2/2415/PNG/32/typescript_original_logo_icon_146317.png) Builder
-
+![npm](https://img.shields.io/npm/dw/@stewartmcgown/ts-builder)
 > ### A simple Typescript builder pattern for your project
 
 ## Usage
