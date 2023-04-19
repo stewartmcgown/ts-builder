@@ -1,6 +1,6 @@
 {
   "name": "@stewartmcgown/ts-builder",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
