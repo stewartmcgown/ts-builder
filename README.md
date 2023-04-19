@@ -29,15 +29,6 @@ const cthulu = build(Cthulu)
 You can either build nested objects using a builder, or by passing in an object.
 
 ```typescript
-
-class Cthulu {
-    dread: boolean;
-    stats: {
-        cultists: number;
-        kills: number;
-    }
-}
-
 const cthulu = build(Cthulu)
     .dread(true)
     .stats({
@@ -45,13 +36,11 @@ const cthulu = build(Cthulu)
         kills: 1000000
     })
     .$build()
-
 ```
 
 ## Interfaces
 
 ```typescript
-
 interface Shadow {
     innsmouth: Date;
     water: boolean;
@@ -61,9 +50,48 @@ const obj = build<Shadow>()
     .innsmouth(new Date())
     .water(() => !!checkWaterIsWet()) // Use functions to set plain values
     .$build();
-
 ```
 
+## Auto Class Hydration
+
+`ts-builder` can detect if you are using a class meta framework, like `@nestjs/graphql`, and will hydrate entities it meets with the builder automatically.
+
+```typescript
+@ObjectType()
+export class A {
+    @Field()
+    b: B
+}
+
+@ObjectType()
+export class B {
+    @Field()
+    c: string
+
+    @Field()
+    d: D
+}
+
+@ObjectType()
+export class D {
+    @Field()
+    e: string
+}
+
+const a = build(A) // No additional config required
+    .b(b => b
+        .c('Hello World')
+        .d(d => d
+            .e('Hello World')
+        )
+    )
+    .$build();
+
+a.b.constructor === B // ✅ 
+a.b.d.constructor === D // ✅ 
+```
+
+If you are using a
 
 ## API
 
