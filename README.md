@@ -22,6 +22,16 @@ const cthulu = build(Cthulu)
         .kills(1000000)
     )
     .$build()
+
+// console.log(cthulu)
+
+[class Cthulu] {
+    dread: true,
+    stats: {
+        cultists: 1000,
+        kills: 1000000
+    }
+}
 ```
 
 ## Nested Objects
