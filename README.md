@@ -1,6 +1,6 @@
 # ![Typescript Logo Small](https://cdn.icon-icons.com/icons2/2415/PNG/32/typescript_original_logo_icon_146317.png) Builder
 
-> ### A simple Typescript builder for your project
+> ### A simple Typescript builder pattern for your project
 
 ## Usage
 
